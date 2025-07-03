@@ -5,7 +5,7 @@ const obtenerPeliculas = async(req, res) => {
         //parametros para el paginado
         const page = parseInt(req.query.page) || 1;
         //limite por paginado
-        const limit =parseInt(req.query.limit) || 10;
+        const limit =parseInt(req.query.limit) || 12;
         const skip = (page - 1) * limit;
 
         // Consultar por páginas
