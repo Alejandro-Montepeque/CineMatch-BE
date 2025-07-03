@@ -17,12 +17,13 @@ const obtenerPeliculas = async(req, res) => {
         res.json({
             success: true,
             data: peliculas,
-            // pagination: {
+            pagination: {
                 total,
                 page,
                 limit,
                 totalPages: Math.ceil(total / limit)
             }
+        }
         )
     } catch ( err ) {
         res.status(500).json({ error: 'Error al obtener las peliculas' })
