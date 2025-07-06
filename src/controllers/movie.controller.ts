@@ -1,11 +1,14 @@
-const Movie = require('../models/movie')
+import { Request, Response } from 'express';
 
-const obtenerPeliculas = async(req, res) => {
+import Movie from '../models/movie.model';
+
+const obtenerPeliculas = async(req: Request, res: Response) => {
     try {
-        //parametros para el paginado
-        const page = parseInt(req.query.page) || 1;
-        //limite por paginado
-        const limit =parseInt(req.query.limit) || 12;
+        // parametros para el paginado
+        const page = Number(req.query.page) || 1;
+
+        // limite por paginado
+        const limit = Number(req.query.limit) || 12;
         const skip = (page - 1) * limit;
 
         // Consultar por páginas
@@ -29,4 +32,4 @@ const obtenerPeliculas = async(req, res) => {
     }
 }
 
-module.exports = { obtenerPeliculas }
+export { obtenerPeliculas };

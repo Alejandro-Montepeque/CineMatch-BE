@@ -1,31 +1,13 @@
-// index.js
-require('dotenv').config();
-require('./db.js');
+import app from "./src/app";
+import { environments } from "./src/config/environments";
+import { MongoDB } from "./src/config/database";
 
-const cors = require('cors')
-const express = require('express');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Middleware para parsear JSON
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true
-}));
-
-app.use(express.json());
-
-
-//Catalogos
-const peliculasRoutes = require('./routes/peliculas');
-app.use('/api/peliculas', peliculasRoutes)
-
-// Ruta de prueba
-app.get('/api', (_req: any, res: any) => {
-  res.send('¡Bienvenido a CineMatch API!');
+MongoDB.connect({
+  uri: environments.MONGODB_URI,
+  dbName: environments.MONGODB_DBNAME,
 });
 
+const PORT = environments.PORT || 3000;
 
 // Iniciar servidor
 app.listen(PORT, () => {

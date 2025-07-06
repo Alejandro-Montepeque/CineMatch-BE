@@ -47,25 +47,18 @@ Reemplaza <usuario>, <contraseña> y <nombre-de-la-base-de-datos> con tus creden
 
 | Endpoint | Método | Descripción |
 |---|---| --- |
-| /api | GET | Mostrar mensaje de bienvenida |
-| /api/peliculas | GET | Mostrar listado de películas |
+| /api/movies | GET | Mostrar listado de películas |
 
 ### Ejemplos de solicitudes
-
-**Mostrar mensaje de bienvenida**
-
-```sh
-curl -X GET "http://localhost:3000/api/"
-```
 
 **Mostrar listado de películas**
 
 ```sh
-curl -X GET "http://localhost:3000/api/peliculas"
+curl -X GET "http://localhost:3000/api/movies"
 ```
 
 **Obtener listado de películas paginadas**
 
 ```sh
-curl -X GET "http://localhost:3000/api/peliculas?page=2&limit=15"
+curl -X GET "http://localhost:3000/api/movies?page=2&limit=15"
 ```
