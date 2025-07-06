@@ -6,8 +6,9 @@
   "license": "ISC",
   "keywords": [],
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "ts-node-dev --respawn index.ts",
+    "build": "npx tsc",
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -16,7 +17,11 @@
     "mongoose": "^8.16.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
   },
   "repository": {
     "type": "git",

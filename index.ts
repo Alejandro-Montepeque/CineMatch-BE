@@ -1,6 +1,6 @@
 // index.js
 require('dotenv').config();
-require('./db');
+require('./db.js');
 
 const cors = require('cors')
 const express = require('express');
@@ -22,7 +22,7 @@ const peliculasRoutes = require('./routes/peliculas');
 app.use('/api/peliculas', peliculasRoutes)
 
 // Ruta de prueba
-app.get('/api', (req, res) => {
+app.get('/api', (_req: any, res: any) => {
   res.send('¡Bienvenido a CineMatch API!');
 });
 
