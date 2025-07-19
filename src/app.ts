@@ -13,6 +13,11 @@ app.use(cors({
 
 app.use(express.json());
 
+// Ruta principal test
+app.get("/", (_req, res) => {
+  res.send("API Ready to use");
+});
+
 app.use("/api", movieRoutes);
 
 export default app;
