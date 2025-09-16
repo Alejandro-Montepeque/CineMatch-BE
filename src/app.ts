@@ -1,6 +1,5 @@
-import express from "express";
 import cors from "cors";
-
+import express from "express";
 import movieRoutes from "./routes/movie.routes";
 
 const app = express();
