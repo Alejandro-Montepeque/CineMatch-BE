@@ -7,6 +7,7 @@ El propósito del proyecto es servir todo el contenido relacionado a películas 
 - **Node.js** instalado en tu máquina
 - Cuenta en MongoDB Atlas y un cluster configurado
 - **Git** instalado en tu máquina
+- **Docker y Docker Compose** opcional, para levantar el proyecto en contenedores
 
 ## Comenzando
 
@@ -36,6 +37,12 @@ Reemplaza <usuario>, <contraseña> y <nombre-de-la-base-de-datos> con tus creden
 
 ## Ejecutar la aplicación
 
+| Metodo | comando | Descripción |
+|---|---| --- |
+| Docker | docker compose up -d --build | Levana el backend y mongoDb automáticamente |
+| Node.js (local) | npm run dev | Ejecuta la aplicación en modo desarrollo |
+| Node.js (local) | npm start | Ejecuta  la apliación en modo producción |
+
 ### Scripts disponibles
 
 | Script | Descripción |
@@ -48,6 +55,8 @@ Reemplaza <usuario>, <contraseña> y <nombre-de-la-base-de-datos> con tus creden
 | Endpoint | Método | Descripción |
 |---|---| --- |
 | /api/movies | GET | Mostrar listado de películas |
+| /api/genres | GET | Mostrar listado de géneros disponibles |
+| /api/decades | GET | Mostrar listado de décadas disponibles |
 
 ### Ejemplos de solicitudes
 
@@ -56,9 +65,18 @@ Reemplaza <usuario>, <contraseña> y <nombre-de-la-base-de-datos> con tus creden
 ```sh
 curl -X GET "http://localhost:3000/api/movies"
 ```
-
 **Obtener listado de películas paginadas**
 
 ```sh
 curl -X GET "http://localhost:3000/api/movies?page=2&limit=15"
+```
+**Mostrar listado de generos**
+
+```sh
+curl -X GET "http://localhost:3000/api/genres"
+```
+**Mostrar listado de décadas**
+
+```sh
+curl -X GET "http://localhost:3000/api/decades"
 ```
