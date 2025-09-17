@@ -7,7 +7,7 @@ MongoDB.connect({
   dbName: environments.MONGODB_DBNAME,
 });
 
-const PORT = environments.PORT || 3000;
+const PORT = process.env.PORT || environments.PORT || 3000;
 
 // Iniciar servidor
 app.listen(PORT, () => {
